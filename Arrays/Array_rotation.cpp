@@ -9,8 +9,15 @@ using namespace std;
 void arrayRotationMethod1(int arr[], int d)
 {
     cout << "arrayRotationMethod1:\n";
+    if (d == 0)
+        return;
+
     int n = sizeof(arr) - 1; /// sizeof(arr)  return size of arr + 1
     //cout << "n = " << n << endl;
+
+    // calculaion of reverse number in case d > n
+    d = d % n;
+
     int rev[n];
     for (int i = 0; i < n; i++)
     {
@@ -32,7 +39,14 @@ void arrayRotationMethod1(int arr[], int d)
 void arrayRotationMethod2(int arr[], int d)
 {
     cout << "arrayRotationMethod2:\n";
+    if (d == 0)
+        return;
+
     int n = sizeof(arr) - 1; /// sizeof(arr)  return size of arr + 1
+
+    // calculaion of reverse number in case d > n
+    d = d % n;
+
     // Create a temp for storing first d elements
     int temp[d];
     int i = 0;
@@ -72,7 +86,14 @@ void leftRotateByOne(int arr[], int n)
 void arrayRotationMethod3(int arr[], int d)
 {
     cout << "arrayRotationMethod3:\n";
+    if (d == 0)
+        return;
+
     int n = sizeof(arr) - 1; /// sizeof(arr)  return size of arr + 1
+
+    // calculaion of reverse number in case d > n
+    d = d % n;
+
     for (int i = 0; i < d; i++)
         leftRotateByOne(arr, n);
 }
