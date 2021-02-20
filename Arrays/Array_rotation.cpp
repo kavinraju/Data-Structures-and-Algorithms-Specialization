@@ -64,6 +64,7 @@ void leftRotateByOne(int arr[], int n)
 
     arr[n - 1] = temp;
 }
+
 /**
  * Time complexity : O(n) 
  * Auxiliary Space : O(1)
@@ -76,6 +77,19 @@ void arrayRotationMethod3(int arr[], int d)
         leftRotateByOne(arr, n);
 }
 
+/**
+ * Time complexity : O(n) 
+ * Auxiliary Space : O(1)
+ */
+void printLeftRotation(int arr[], int d)
+{
+    cout << "\nprintLeftRotation:\n";
+    int n = sizeof(arr) - 1;
+    int x = d % n;
+    for (int i = 0; i < n; i++)
+        cout << arr[(x + i) % n] << " ";
+}
+
 int main()
 {
     int arr[] = {1, 2, 3, 4, 5, 6, 7};
@@ -85,5 +99,9 @@ int main()
     int n = sizeof(arr) / sizeof(arr[0]);
     for (int i = 0; i < n; i++)
         cout << arr[i] << ",";
+
+    cout << endl;
+
+    printLeftRotation(arr, d);
     return 0;
 }
