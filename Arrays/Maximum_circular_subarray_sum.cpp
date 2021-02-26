@@ -16,6 +16,15 @@ int kadane(int arr[], int n)
     }
     return max_so_far;
 }
+
+/**
+ * Note that the below algorithm doesn’t work if all numbers are negative e.g., {-1, -2, -3}. 
+ * It returns 0 in this case. This case can be handled by adding a pre-check to see if all the 
+ * numbers are negative before running the above
+ * 
+ * Time Complexity: O(n), where n is the number of elements in input array. As only linear traversal of the array is needed.
+ * Auxiliary Space: O(1). As no extra space is required.
+ */
 int maxCircularSum(int arr[], int n)
 {
     // Case 1: get the maximum sum using standard kadane's algorithm
