@@ -9,14 +9,32 @@ int lengthOfLongestOddEvenSubarray(int arr[], int n)
     int counter = 1, max_length = 0;
     for (int i = 0; i < n - 1; i++)
     {
-        if ((arr[i] + arr[i + 1]) % 2 != 0){
-        	counter++;
-			max_length = counter;
-		}
+        if ((arr[i] + arr[i + 1]) % 2 != 0)
+        {
+            counter++;
+            max_length = counter;
+        }
         else
             counter = 1;
     }
     return max_length;
+}
+
+int lengthOfLongestOddEvenSubarray2(int arr[], int n)
+{
+    int counter = 1, max_length = 1;
+    for (int i = 0; i < n - 1; i++)
+    {
+        if ((arr[i] + arr[i + 1]) % 2 != 0)
+            counter++;
+        else
+        {
+            max_length = max(counter, max_length);
+            counter = 1;
+        }
+    }
+
+    return max(counter, max_length);
 }
 
 int main()
