@@ -1,9 +1,9 @@
-#include<iostream>
-#include<vector>
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <bits/stdc++.h>
 #include <algorithm>
-#include <sstream>  // for string streams 
-#include <string>  // for string 
+#include <sstream> // for string streams
+#include <string>  // for string
 using namespace std;
 
 /*
@@ -21,49 +21,56 @@ Correct output:
  (Time used: 0.00/1.00, memory used: 9129984/536870912.)
  
 */
-bool cmp(const int& a, const int& b){
-	return a>b;
+bool cmp(const int &a, const int &b)
+{
+	return a > b;
 }
 
-int removeZeros(int n){
+int removeZeros(int n)
+{
 	int temp;
-	while(n != 0){
+	while (n != 0)
+	{
 		temp = n / 10;
 		n /= 10;
-		if(n/10 == 0)
+		if (n / 10 == 0)
 			return temp;
 	}
 }
 
-string getMaxSalary(deque<int> digits){
+string getMaxSalary(deque<int> digits)
+{
 	string answer = "";
-	
+
 	sort(digits.begin(), digits.end(), &cmp);
 	//digits.sort();
 	//digits.reverse()
-	
+
 	/*for(int i=0 ; i<digits.size(); i++)
 		cout<<digits[i]<<" ";
 		
 	cout<<endl;*/
-	
+
 	deque<int> tens;
-	
-	while(digits.size() != 0){
+
+	while (digits.size() != 0)
+	{
 		//cout<<"digits.size(): "<<digits.size()<<endl;
 		//cout<<"answer: "<<answer<<endl;
 		int maxDigit; // Note INT8_MIN
-		
+
 		// Separate out the all the tens, hundreds, thousands... 10,100,1000,...
-		while(removeZeros(digits[0]) == 1){
+		while (removeZeros(digits[0]) == 1)
+		{
 			tens.push_back(digits[0]);
 			digits.pop_front();
 		}
-		
+
 		maxDigit = digits[0];
-		
-		if(answer != ""){
-			
+
+		if (answer != "")
+		{
+
 			/*
 			 IMPORTANT STEP - Taking the "answer" didn't work, as its length can go more than 50 or 100,
 			 taking the first two digits of the answer and comparing works.
@@ -72,49 +79,54 @@ string getMaxSalary(deque<int> digits){
 			 	 => appendToFront = 4535
 			 	 => appendToBack = 3545
 			*/
-			int ans = stoi(answer.substr(0,2)); 
+			int ans = stoi(answer.substr(0, 2));
 			//cout<<"ans: "<<ans<<endl;
 			int appendToFront = stoi(to_string(maxDigit) + to_string(ans));
 			int appendToEnd = stoi(to_string(ans) + to_string(maxDigit));
-			
+
 			//cout<<"appendToFront: "<<appendToFront<<endl;
 			//cout<<"appendToEnd: "<<appendToEnd<<endl;
-			
-			if(appendToFront > appendToEnd)
+
+			if (appendToFront > appendToEnd)
 				answer = to_string(maxDigit) + answer;
 			else
 				answer = answer + to_string(maxDigit);
-		}else{
+		}
+		else
+		{
 			answer = to_string(maxDigit);
 		}
-		
+
 		//digits.erase(remove(digits.begin(), digits.end(), maxDigit), digits.end());
 		digits.pop_front();
 	}
-	
+
 	// sort the tens into increasing order..
 	sort(tens.begin(), tens.end());
 
 	//Append the tens to the answer
-	for(int& i: tens){
+	for (int &i : tens)
+	{
 		answer += to_string(i);
 	}
-	
+
 	return answer;
 }
 
-int main(){
+int main()
+{
 	int n;
-	cin>>n;
-	
+	cin >> n;
+
 	deque<int> digits;
-	for(int i=0; i<n; i++){
+	for (int i = 0; i < n; i++)
+	{
 		int t;
-		cin>>t;
+		cin >> t;
 		digits.push_back(t);
 	}
-	
+
 	string maxSalary = getMaxSalary(digits);
-	cout<<maxSalary;
+	cout << maxSalary;
 	return 0;
 }

@@ -3,5 +3,27 @@
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": []
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch DFS_Recursive",
+            "request": "launch",
+            "mainClass": "DFS_Recursive",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_929c5a57"
+        },
+        {
+            "type": "java",
+            "name": "Launch DFS",
+            "request": "launch",
+            "mainClass": "DFS",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_929c5a57"
+        },
+        {
+            "type": "java",
+            "name": "Launch GraphBFS",
+            "request": "launch",
+            "mainClass": "GraphBFS",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_929c5a57"
+        }
+    ]
 }
