@@ -1,3 +1,6 @@
+/*
+    Time Complexity: O(V^2)
+*/
 public class Djikstra_Algorithm_Matrix_Method {
 
     class Graph{
