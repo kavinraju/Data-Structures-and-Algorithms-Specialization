@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Belmann_Ford_Algorithm",
+            "request": "launch",
+            "mainClass": "Belmann_Ford_Algorithm",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
             "name": "Launch DFS_Recursive",
             "request": "launch",
             "mainClass": "DFS_Recursive",
