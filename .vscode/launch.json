@@ -6,6 +6,55 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Smallest_subarray_with_all_occurrences_of_a_most_frequent_element",
+            "request": "launch",
+            "mainClass": "Smallest_subarray_with_all_occurrences_of_a_most_frequent_element",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
+            "name": "Launch Count_distinct_elements_within_a_window",
+            "request": "launch",
+            "mainClass": "Count_distinct_elements_within_a_window",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
+            "name": "Launch CountDistinctWindow",
+            "request": "launch",
+            "mainClass": "CountDistinctWindow",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
+            "name": "Launch Count_frequencies_of_the_elements_in_array",
+            "request": "launch",
+            "mainClass": "Count_frequencies_of_the_elements_in_array",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
+            "name": "Launch BinarySearchTree",
+            "request": "launch",
+            "mainClass": "BinarySearchTree",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
+            "name": "Launch Minimum_operation_to_make_all_elements_equal_in_array",
+            "request": "launch",
+            "mainClass": "Minimum_operation_to_make_all_elements_equal_in_array",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
+            "name": "Launch GraphBFS",
+            "request": "launch",
+            "mainClass": "GraphBFS",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
             "name": "Launch Djikstra_Algorithm_Matrix_Method",
             "request": "launch",
             "mainClass": "Djikstra_Algorithm_Matrix_Method",

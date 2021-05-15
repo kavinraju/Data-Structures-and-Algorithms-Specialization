@@ -46,5 +46,9 @@
         "xtr1common": "cpp",
         "xutility": "cpp",
         "stack": "cpp"
-    }
+    },
+    "java.project.sourcePaths": [
+        "Others",
+        "Hashing"
+    ]
 }
