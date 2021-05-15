@@ -39,7 +39,6 @@ class Count_distinct_elements_within_a_window {
     public static void main(String args[]) {
         int arr[] = { 1, 2, 1, 3, 4, 2, 3, 3 };
         int k = 4;
-        Count_distinct_elements_within_a_window c = new Count_distinct_elements_within_a_window();
-        c.countDistinct(arr, k);
+        countDistinct(arr, k);
     }
 }
