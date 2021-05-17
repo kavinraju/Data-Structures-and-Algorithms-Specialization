@@ -3,6 +3,30 @@
 
 using namespace std;
 
+/*
+Link: https://www.geeksforgeeks.org/generating-subarrays-using-recursion/
+Time Complexity: O(n)^2
+
+Example:
+For the input [1,2,3], with the refence couts' with # and $ sign will output the following.
+            [1]
+            %
+            #
+            [1,2]
+            %
+            [2]
+            %
+            #
+            [1,2,3]
+            %
+            [2,3]
+            %
+            [3]
+            %
+            #
+*/
+
+//Function to print the sub arrays.
 void printSubarrays(vector<int> arr, int start, int end)
 {
     if (end == arr.size())
@@ -10,7 +34,7 @@ void printSubarrays(vector<int> arr, int start, int end)
 
     else if (start > end)
     {
-        cout << "#\n";
+        //cout << "#\n";
         printSubarrays(arr, 0, end + 1);
     }
     else
@@ -22,9 +46,9 @@ void printSubarrays(vector<int> arr, int start, int end)
         }
 
         cout << arr[end] << "]" << endl;
-        cout << "%\n";
+        //cout << "%\n";
         printSubarrays(arr, start + 1, end);
-        }
+    }
 
     return;
 }
