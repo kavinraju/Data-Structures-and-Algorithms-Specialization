@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.Map.Entry;
 
 public class Convert_Units_Using_DFS {
 
@@ -15,14 +14,12 @@ public class Convert_Units_Using_DFS {
         }
     }
 
-    private int numOfVertices;
     private HashMap<String, LinkedList<HashMap<String, Float>>> adj;
+    private StringBuilder multiplier;
 
-    public Convert_Units_Using_DFS(int numOfVertices) {
-        this.numOfVertices = numOfVertices;
+    public Convert_Units_Using_DFS() {
         adj = new HashMap<>();
-        // for (int i = 0; i < numOfVertices; i++)
-        // adj[i] = new HashMap<>();
+        multiplier = new StringBuilder("\nMultiplier: ");
     }
 
     public void addEdge(String fromUnit, String toUnit, float multiplier) {
@@ -50,38 +47,45 @@ public class Convert_Units_Using_DFS {
     boolean DFSUtil(String fromString, HashMap<String, Boolean> visited, String findToUnit) {
 
         // Create a stack for DFS
-        Stack<String> stack = new Stack<>();
+        Stack<HashMap<String, Float>> stack = new Stack<>();
+        HashMap<String, Float> map = new HashMap<>();
+        map.put(fromString, 1f);
 
         // Push current vertex into stack
-        stack.push(fromString);
+        stack.push(map);
 
         // Iterate until the stack gets empty
         while (!stack.empty()) {
 
-            String x = stack.peek();
+            HashMap<String, Float> x = stack.peek();
             stack.pop();
 
             // Stack may contain same vertex twice. So
             // we need to print the popped item only
             // if it is not visited.
-            if (!visited.get(x)) {
+            String key = (String) x.keySet().toArray()[0];
+            // System.out.println("key: " + key);
+            if (!visited.get(key)) {
                 // Mark the current node as visited and print
-                System.out.print(x + " ");
-                visited.put(x, true);
+                System.out.print(key + " ");
+                multiplier.append(x.get(key) + " * ");
+                visited.put(key, true);
             }
 
-            if (x == findToUnit)
+            if (key == findToUnit) {
+                System.out.println(multiplier.toString());
                 return true;
+            }
 
             // Get all adjacent vertices of the popped vertex x
             // If a adjacent has not been visited, then push it
             // to the stack.
-            LinkedList<HashMap<String, Float>> list = adj.get(x) == null ? new LinkedList<>() : adj.get(x);
+            LinkedList<HashMap<String, Float>> list = adj.get(key) == null ? new LinkedList<>() : adj.get(key);
             for (HashMap<String, Float> item : list) {
-                String key = (String) item.keySet().toArray()[0];
-                if (!visited.get(key)) {
-                    stack.push(key);
-                    // System.out.println("stack.push(key); " + key);
+                String key_ = (String) item.keySet().toArray()[0];
+                if (!visited.get(key_)) {
+                    stack.push(item);
+                    // System.out.println("stack.push(key): " + item);
                 }
             }
         }
@@ -123,8 +127,8 @@ public class Convert_Units_Using_DFS {
         inputs.add(new Input("yard", "cm", 91.44f));
         inputs.add(new Input("feet", "yard", 0.333333f));
         inputs.add(new Input("cm", "meter", 0.01f));
-        inputs.add(new Input("feet", "meter", 43f));
-        inputs.add(new Input("meter", "cm", 100f));
+        // inputs.add(new Input("feet", "meter", 43f));
+        // inputs.add(new Input("meter", "cm", 100f));
 
         Set<String> unitsSet = new HashSet<>();
         // Get the unique units
@@ -133,7 +137,7 @@ public class Convert_Units_Using_DFS {
             unitsSet.add(input.toUnit);
         }
 
-        String findUnitFrom = "yard", findUnitTo = "meter";
+        String findUnitFrom = "feet", findUnitTo = "cm";
 
         List<String> units = new ArrayList<>();
         units.add(findUnitFrom);
@@ -146,7 +150,7 @@ public class Convert_Units_Using_DFS {
 
         System.out.println(units);
 
-        Convert_Units_Using_DFS dfs = new Convert_Units_Using_DFS(inputs.size());
+        Convert_Units_Using_DFS dfs = new Convert_Units_Using_DFS();
 
         for (Input input : inputs) {
             dfs.addEdge(input.fromUnit, input.toUnit, input.multiplier);
