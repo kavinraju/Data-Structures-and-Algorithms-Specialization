@@ -62,6 +62,22 @@ public class BinarySearchTree {
         return elementSearchStatus;
     }
 
+    boolean checkBST(Node root) {
+        if (root.left != null && root.left.value < root.value) {
+            checkBST(root.left);
+        } else {
+            return false;
+        }
+
+        if (root.right != null && root.right.value > root.value) {
+            checkBST(root.right);
+        } else {
+            return false;
+        }
+
+        return true;
+    }
+
     public static void main(String[] args) {
 
         BinarySearchTree tree = new BinarySearchTree(4);
@@ -71,11 +87,16 @@ public class BinarySearchTree {
         tree.insert(1);
         tree.insert(3);
         tree.insert(5);
+        tree.insert(0);
 
         // Check search
         // Should be True
-        System.out.println(tree.search(4));
+        System.out.println(tree.search(0));
         // Should be False
         System.out.println(tree.search(6));
+
+        // Check if the Tree is BST
+        System.out.println("Check if the Tree is BST:");
+        System.out.println(tree.checkBST(tree.root));
     }
 }
