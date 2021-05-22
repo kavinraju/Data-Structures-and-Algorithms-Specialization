@@ -49,6 +49,8 @@
     },
     "java.project.sourcePaths": [
         "Others",
-        "Hashing"
+        "Heap",
+        "Hashing",
+        "Graphs"
     ]
 }

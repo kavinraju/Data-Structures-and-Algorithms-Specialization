@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Convert_Units_Using_DFS",
+            "request": "launch",
+            "mainClass": "Convert_Units_Using_DFS",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
+            "name": "Launch DFS",
+            "request": "launch",
+            "mainClass": "DFS",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
             "name": "Launch Smallest_subarray_with_all_occurrences_of_a_most_frequent_element",
             "request": "launch",
             "mainClass": "Smallest_subarray_with_all_occurrences_of_a_most_frequent_element",

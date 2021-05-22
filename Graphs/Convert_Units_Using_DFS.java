@@ -97,7 +97,7 @@ public class Convert_Units_Using_DFS {
         HashMap<String, Boolean> visited = new HashMap<>();
 
         Iterator<String> itr = units.iterator();
-        int i = 0;
+
         while (itr.hasNext()) {
             visited.put(itr.next(), false);
         }
