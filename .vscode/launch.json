@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CountDistinctWindow",
+            "request": "launch",
+            "mainClass": "CountDistinctWindow",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_929c5a57"
+        },
+        {
+            "type": "java",
             "name": "Launch DFS_Recursive",
             "request": "launch",
             "mainClass": "DFS_Recursive",
