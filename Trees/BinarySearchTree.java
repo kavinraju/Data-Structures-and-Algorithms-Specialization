@@ -12,31 +12,28 @@ public class BinarySearchTree {
 
     private Node root;
 
-    BinarySearchTree(int value) {
-        root = new Node(value);
+    BinarySearchTree() {
+        root = null;
     }
 
     // Insertion
     public void insert(int new_val) {
-        insertItem(root, new_val);
+        root = insertItem(root, new_val);
     }
 
-    private void insertItem(Node root, int new_val) {
-        Node node = new Node(new_val);
-        if (new_val > root.value) {
+    private Node insertItem(Node root, int new_val) {
 
-            if (root.right == null)
-                root.right = node;
-            else
-                insertItem(root.right, new_val);
-
-        } else if (new_val < root.value) {
-
-            if (root.left == null)
-                root.left = node;
-            else
-                insertItem(root.left, new_val);
+        if (root == null) {
+            root = new Node(new_val);
+            return root;
         }
+
+        if (new_val > root.value)
+            root.right = insertItem(root.right, new_val);
+        else if (new_val < root.value)
+            root.left = insertItem(root.left, new_val);
+
+        return root;
     }
 
     // Serach
@@ -78,11 +75,24 @@ public class BinarySearchTree {
         return true;
     }
 
+    public void inOrder() {
+        inOrder(root);
+    }
+
+    private void inOrder(Node root) {
+        if (root != null) {
+            inOrder(root.left);
+            System.out.print(root.value + " ");
+            inOrder(root.right);
+        }
+    }
+
     public static void main(String[] args) {
 
-        BinarySearchTree tree = new BinarySearchTree(4);
+        BinarySearchTree tree = new BinarySearchTree();
 
         // Insert elements
+        tree.insert(4);
         tree.insert(2);
         tree.insert(1);
         tree.insert(3);
@@ -98,5 +108,8 @@ public class BinarySearchTree {
         // Check if the Tree is BST
         System.out.println("Check if the Tree is BST:");
         System.out.println(tree.checkBST(tree.root));
+
+        System.out.println("Priting in In-Order: ");
+        tree.inOrder();
     }
 }
