@@ -30,10 +30,17 @@ Output To be printed
 int main()
 {
     int n, m;
-    //cin >> n >> m;
-    n = 10, m =4;
-    int mul = -1, N = n * n;
+    cin >> n >> m;
+    //n = 3, m =4;
+    int N = n * n;
     int i = 0, j =0;
+    bool isEven = n % 2 == 0;
+
+    if(isEven) 
+        j = 0; 
+    else 
+        j = n;
+
     while(i < n){
         if(j == 0){
             //j = 0, 1, 2, 3, 4
@@ -46,7 +53,7 @@ int main()
         }else if( j == n ){
             // j = 4, 3, 2, 1, 0
             // jj = 3, 2, 1, 0 | 2, 1, 0 | 1, 0 | 0
-            N -= (j-1);
+            N -= (n-1);
             j =0;
             while(j <= n-1){
                 cout<<N++<<"\t";
@@ -55,18 +62,6 @@ int main()
             }
             j = 0;
             N -= (n+1);
-
-            // int jj = --j;
-            // while(j >= 0){
-
-            //     while(jj > 0 ){
-            //         cout<<"\t";
-            //         jj--;
-            //     }
-            //     //N -= (j+1);
-            //     cout<<N--<<"\t";
-            //     jj = --j;
-            // }
         }
 
         i++;
