@@ -6,6 +6,7 @@
     "configurations": [
         {
             "type": "java",
+<<<<<<< HEAD
             "name": "Launch CountDistinctWindow",
             "request": "launch",
             "mainClass": "CountDistinctWindow",
@@ -13,6 +14,86 @@
         },
         {
             "type": "java",
+||||||| merged common ancestors
+=======
+            "name": "Launch Convert_Units_Using_DFS",
+            "request": "launch",
+            "mainClass": "Convert_Units_Using_DFS",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
+            "name": "Launch DFS",
+            "request": "launch",
+            "mainClass": "DFS",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
+            "name": "Launch Smallest_subarray_with_all_occurrences_of_a_most_frequent_element",
+            "request": "launch",
+            "mainClass": "Smallest_subarray_with_all_occurrences_of_a_most_frequent_element",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
+            "name": "Launch Count_distinct_elements_within_a_window",
+            "request": "launch",
+            "mainClass": "Count_distinct_elements_within_a_window",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
+            "name": "Launch CountDistinctWindow",
+            "request": "launch",
+            "mainClass": "CountDistinctWindow",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
+            "name": "Launch Count_frequencies_of_the_elements_in_array",
+            "request": "launch",
+            "mainClass": "Count_frequencies_of_the_elements_in_array",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
+            "name": "Launch BinarySearchTree",
+            "request": "launch",
+            "mainClass": "BinarySearchTree",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
+            "name": "Launch Minimum_operation_to_make_all_elements_equal_in_array",
+            "request": "launch",
+            "mainClass": "Minimum_operation_to_make_all_elements_equal_in_array",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
+            "name": "Launch GraphBFS",
+            "request": "launch",
+            "mainClass": "GraphBFS",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
+            "name": "Launch Djikstra_Algorithm_Matrix_Method",
+            "request": "launch",
+            "mainClass": "Djikstra_Algorithm_Matrix_Method",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
+            "name": "Launch Belmann_Ford_Algorithm",
+            "request": "launch",
+            "mainClass": "Belmann_Ford_Algorithm",
+            "projectName": "Data-Structures-and-Algorithms-Specialization_412f8f04"
+        },
+        {
+            "type": "java",
+>>>>>>> e41e4f77914b37dbd35c5204c021c5cb309d434f
             "name": "Launch DFS_Recursive",
             "request": "launch",
             "mainClass": "DFS_Recursive",

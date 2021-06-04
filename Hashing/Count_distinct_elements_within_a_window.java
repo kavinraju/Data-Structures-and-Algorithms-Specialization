@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-class CountDistinctWindow {
+class Count_distinct_elements_within_a_window {
 
     static void countDistinct(int arr[], int k) {
         // Create a hash map

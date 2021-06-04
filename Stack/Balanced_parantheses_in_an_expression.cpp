@@ -5,6 +5,9 @@ using namespace std;
 
 bool areBracketsBalanced(string expr)
 {
+    if (expr == "" || expr.length() == 1)
+        return false;
+
     stack<char> s;
     char x;
 
