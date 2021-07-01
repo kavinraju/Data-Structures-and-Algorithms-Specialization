@@ -22,7 +22,7 @@ class Count_distinct_elements_within_a_window {
                 hMap.remove(arr[i - k]);
             } else {
                 // else reduce the count of the removed element
-                hMap.put(arr[i - k], hMap.get(arr[i - k]) + 1);
+                hMap.put(arr[i - k], hMap.get(arr[i - k]) - 1);
             }
 
             /*
