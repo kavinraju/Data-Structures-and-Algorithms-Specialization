@@ -57,27 +57,34 @@ public class LinkedListImplementation {
                     head.next = new_node;
                 }
             } else {
-                Node node = head;
-                Node prev = null;
-                System.out.println(":head -> " + node.data);
+                Node node = head; // to iterate over the nodes
+                Node prev = null; // to keep hold of the prev node so that we can insert the new node
 
-                int i = 0;
+                // Iterate to the position where the current node.data is less than data.
+                // If the data is greater than all the elements in the list then prev node will
+                // be the last-node and `node` will be equal to null.
                 while (node.data < data) {
-                    System.out.println(i++ + ":Node.data -> " + node.data);
                     prev = node;
                     node = node.next;
                     if (node == null)
                         break;
                 }
 
+                // condition for values in b/w the list
                 if (node != null && prev != null && data <= node.data) {
                     prev.next = new_node;
                     new_node.next = node;
-                } else if (prev == null && node.data >= data) {
+                }
+                // condition for values at 0th postion of the list and that's why we change the
+                // head value
+                else if (prev == null && node.data >= data) {
                     Node next_node = head;
                     head = new_node;
                     new_node.next = next_node;
-                } else {
+                }
+                // condition for values at the end of the list, that is when prev node will
+                // be last-node and `node` will be equal to null.
+                else {
                     prev.next = new_node;
                 }
 
