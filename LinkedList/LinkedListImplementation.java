@@ -17,7 +17,6 @@ public class LinkedListImplementation {
     // This method inserts the data at the end of the LinkedList
     public void insert(int data) {
         Node newNode = new Node(data);
-        newNode.next = null;
 
         if (head == null) {
             head = newNode;
@@ -35,6 +34,56 @@ public class LinkedListImplementation {
         Node new_node = new Node(data);
         new_node.next = head;
         head = new_node;
+    }
+
+    /**
+     * Sorted insert in the LinkedList
+     * 
+     * @param headNode
+     */
+    public void insertBySort(int data) {
+        Node new_node = new Node(data);
+
+        if (head == null) {
+            head = new_node;
+        } else {
+
+            if (head.next == null) {
+                if (data < head.data) {
+                    Node next_node = head;
+                    head = new_node;
+                    head.next = next_node;
+                } else {
+                    head.next = new_node;
+                }
+            } else {
+                Node node = head;
+                Node prev = null;
+                System.out.println(":head -> " + node.data);
+
+                int i = 0;
+                while (node.data < data) {
+                    System.out.println(i++ + ":Node.data -> " + node.data);
+                    prev = node;
+                    node = node.next;
+                    if (node == null)
+                        break;
+                }
+
+                if (node != null && prev != null && data <= node.data) {
+                    prev.next = new_node;
+                    new_node.next = node;
+                } else if (prev == null && node.data >= data) {
+                    Node next_node = head;
+                    head = new_node;
+                    new_node.next = next_node;
+                } else {
+                    prev.next = new_node;
+                }
+
+            }
+        }
+
     }
 
     /**
