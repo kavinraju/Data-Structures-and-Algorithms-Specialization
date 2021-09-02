@@ -45,7 +45,8 @@
         "xstring": "cpp",
         "xtr1common": "cpp",
         "xutility": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "*.cpp14": "cpp"
     },
     "java.project.sourcePaths": [
         "Others",

@@ -26,9 +26,13 @@ int minimumCoins(long money, vector<int> coins)
 
 int main()
 {
-    vector<int> coins = vector<int>({6, 5, 1});
+    //vector<int> coins = vector<int>({6, 5, 1});
+    vector<int> coins;
+    coins.push_back(6);
+    coins.push_back(5);
+    coins.push_back(1);
     long money = 9;
     int minNumCoins = minimumCoins(money, coins);
-    cout << "Min: " << minimumCoins;
+    cout << "Min: " << minNumCoins;
     return 0;
 }
