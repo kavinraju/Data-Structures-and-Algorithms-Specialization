@@ -1,6 +1,18 @@
 #include <iostream>
 using namespace std;
 
+/**
+ Input:
+ 4
+ Output:
+    1
+    121
+    12321
+    1234321
+    12321
+    121
+    1
+ **/
 int main()
 {
     int n;
